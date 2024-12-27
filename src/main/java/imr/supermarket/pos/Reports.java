@@ -23,6 +23,9 @@ public class Reports extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(162, 114, 141));
+
+        jPanel2.setBackground(new java.awt.Color(234, 203, 195));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

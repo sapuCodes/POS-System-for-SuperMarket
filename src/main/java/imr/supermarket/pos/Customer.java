@@ -46,6 +46,9 @@ public class Customer extends javax.swing.JPanel {
         NAme4 = new javax.swing.JLabel();
         c_search_tbl = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(162, 114, 141));
+
+        jPanel1.setBackground(new java.awt.Color(234, 203, 195));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         NAme1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -144,6 +147,7 @@ public class Customer extends javax.swing.JPanel {
         );
 
         c_table.setAutoCreateRowSorter(true);
+        c_table.setBackground(new java.awt.Color(234, 203, 195));
         c_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -159,6 +163,9 @@ public class Customer extends javax.swing.JPanel {
             }
         ));
         c_table.setToolTipText("");
+        c_table.setShowGrid(true);
+        c_table.setShowHorizontalLines(true);
+        c_table.setShowVerticalLines(true);
         c_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 c_tableMouseClicked(evt);
@@ -166,12 +173,15 @@ public class Customer extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(c_table);
 
+        jPanel2.setBackground(new java.awt.Color(234, 203, 195));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         NAme2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         NAme2.setText("Search ID :");
 
         NAme3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        NAme3.setForeground(new java.awt.Color(51, 51, 51));
+        NAme3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customers.png"))); // NOI18N
         NAme3.setText("Customer info");
 
         c_search.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +263,7 @@ public class Customer extends javax.swing.JPanel {
                             .addComponent(c_search_tbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

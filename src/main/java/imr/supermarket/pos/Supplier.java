@@ -45,6 +45,9 @@ public class Supplier extends javax.swing.JPanel {
         NAme4 = new javax.swing.JLabel();
         s_search_tbl = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(162, 114, 141));
+
+        jPanel1.setBackground(new java.awt.Color(234, 203, 195));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         NAme.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -143,6 +146,7 @@ public class Supplier extends javax.swing.JPanel {
         );
 
         s_table.setAutoCreateRowSorter(true);
+        s_table.setBackground(new java.awt.Color(234, 203, 195));
         s_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -165,12 +169,14 @@ public class Supplier extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(s_table);
 
+        jPanel2.setBackground(new java.awt.Color(234, 203, 195));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         NAme2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         NAme2.setText("Search ID :");
 
         NAme3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        NAme3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/supplier.png"))); // NOI18N
         NAme3.setText("Supplier info");
 
         c_search.addActionListener(new java.awt.event.ActionListener() {
