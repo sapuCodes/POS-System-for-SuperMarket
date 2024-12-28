@@ -40,6 +40,11 @@
       <version>7.0.1</version>
       <type>jar</type>
     </dependency>
+    <dependency>
+        <groupId>org.netbeans.external</groupId>
+        <artifactId>AbsoluteLayout</artifactId>
+      <version>RELEASE230</version>
+    </dependency>
 </dependencies>
 
 

@@ -3,6 +3,9 @@ package imr.supermarket.pos;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class Home extends javax.swing.JFrame {
     JpanelLoader jpload = new JpanelLoader();
@@ -31,6 +34,7 @@ public class Home extends javax.swing.JFrame {
         jToggleButton9 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        calculater = new javax.swing.JButton();
         panel_load = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -205,6 +209,18 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         jLabel1.setText("   POS System");
 
+        calculater.setBackground(new java.awt.Color(102, 102, 255));
+        calculater.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        calculater.setForeground(new java.awt.Color(255, 255, 255));
+        calculater.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calculator.png"))); // NOI18N
+        calculater.setText("Calculater");
+        calculater.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 51, 51)));
+        calculater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calculaterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -212,7 +228,9 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addContainerGap(703, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 578, Short.MAX_VALUE)
+                .addComponent(calculater, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +238,10 @@ public class Home extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(calculater, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         panel_load.setBackground(new java.awt.Color(162, 114, 141));
@@ -317,8 +339,39 @@ public class Home extends javax.swing.JFrame {
 
     private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
         // discounts
-        Discounts dis=new Discounts();
-        jpload.jPanelLoader(panel_load, dis);
+        // Discount button action with manager authentication
+
+    // Display a login dialog
+    JTextField usernameField = new JTextField();
+    JPasswordField passwordField = new JPasswordField();
+    Object[] message = {
+        "Username:", usernameField,
+        "Password:", passwordField
+    };
+
+    int option = JOptionPane.showConfirmDialog(null, message, "Manager Authentication", JOptionPane.OK_CANCEL_OPTION);
+    if (option == JOptionPane.OK_OPTION) {
+        String username = usernameField.getText();
+        String password = new String(passwordField.getPassword());
+
+        // Validate credentials (replace with your actual validation logic)
+        if (isValidManager(username, password)) {
+            // Load the Discounts panel
+            Discounts dis = new Discounts();
+            jpload.jPanelLoader(panel_load, dis);
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid username or password. Access denied.");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Access canceled.");
+    }
+}
+
+// Manager authentication logic
+private boolean isValidManager(String username, String password) {
+    // Replace with your database query or hardcoded credentials for simplicity
+    // For example:
+    return "manager".equals(username) && "123".equals(password);
 
     }//GEN-LAST:event_jToggleButton8ActionPerformed
 
@@ -327,6 +380,15 @@ public class Home extends javax.swing.JFrame {
         Stock stk=new Stock();
         jpload.jPanelLoader(panel_load, stk);
     }//GEN-LAST:event_jToggleButton9ActionPerformed
+
+    private void calculaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculaterActionPerformed
+        // pop up calculater
+         // Pop up the calculator
+    Calculator cal = new Calculator(); // Instantiate your Calculater class
+    cal.setVisible(true);             // Make it visible
+    cal.setLocationRelativeTo(this);  // Center the calculator relative to the current frame
+
+    }//GEN-LAST:event_calculaterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -366,6 +428,7 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton calculater;
     private javax.swing.ButtonGroup home_btn_grp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
