@@ -11,6 +11,18 @@
     </header>
     <section>
       <img src="src/main/resources/images/ss pos/App.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Sales.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Pay&Print.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Customers.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Employees.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Suppliers.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Product.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/current stock.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/invoice.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/reports.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Discount(user,pass).png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/Discounts.png" alt="A descriptive alt text">
+        <img src="src/main/resources/images/ss pos/inbuilt Cal.png" alt="A descriptive alt text">
     </section>
 </body>
 </html>
